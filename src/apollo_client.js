@@ -29,8 +29,8 @@ const Headers = () => {
      addTypename: true
    })
  })
- const Provider = new VueApollo({
+const apolloProvider = new VueApollo({
     defaultClient: client
   })
 
-export default Provider 
+export default apolloProvider
