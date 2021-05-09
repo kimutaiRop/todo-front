@@ -7,16 +7,16 @@
         <a
           href="#"
           class="list-group-item list-group-item-action flex-column align-items-start"
+          v-for="todo of todos" :key="todo.id"
         >
           <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-            <small class="text-muted">3 days ago</small>
+            <h5 class="mb-1">{{todo.title}}</h5>
+            <small class="text-muted">{{new Date(todo.dateTime).toLocaleString()}}</small>
           </div>
           <p class="mb-1">
-            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-            eget risus varius blandit.
+          {{todo.place}}
           </p>
-          <small class="text-muted">Donec id elit non mi porta.</small>
+          <small class="text-muted">{{todo.id}}</small>
         </a>
       </div>
     </div>
@@ -29,6 +29,7 @@ export default {
   name: "HomePage",
   props: {
     msg: String,
+    todos:Array
   },
 };
 </script>
